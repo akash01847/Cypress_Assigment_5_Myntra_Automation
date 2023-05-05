@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2023-05-05T10:09:37.867Z",
+    "end": "2023-05-05T10:10:00.369Z",
+    "duration": 22502
+  },
+  "results": [
+    {
+      "uuid": "c73914d2-681a-4986-894e-c72c3ac8d0dc",
+      "title": "",
+      "fullFile": "cypress/e2e/Assignment_5_Myntra_Automation.cy.js",
+      "file": "cypress/e2e/Assignment_5_Myntra_Automation.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f49b68b8-f959-401f-b51c-82c2f2981fdb",
+          "title": "Search Product on Myntra",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Searches and Displays Results",
+              "fullTitle": "Search Product on Myntra Searches and Displays Results",
+              "timedOut": null,
+              "duration": 21193,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos\",\n  \"value\": \"cypress/e2e/Assignment_5_Myntra_Automation.cy.js\"\n}",
+              "code": "// Visit the Myntra website\ncy.visit('https://www.myntra.com/', {\n  headers: {\n    \"Accept-Encoding\": \"gzip, deflate\"\n  }\n}, {\n  continueAfter: 3000\n});\n// Search for the product\ncy.get('input[class=\"desktop-searchBar\"]').type('shirt');\ncy.get('a[class=\"desktop-submit\"]').click();\n// Click on the first product\ncy.get('li[class=\"product-base\"]').find('a').invoke('removeAttr', 'target').eq(0).click();\n//.size-buttons-size-button.size-buttons-size-button-default\n// div.size-buttons-buttonContainer p.size-buttons-unified-size\ncy.get('.size-buttons-size-button.size-buttons-size-button-default').eq(1).click({\n  force: true\n});\ncy.get('div.pdp-add-to-bag.pdp-button.pdp-flex.pdp-center').click({\n  force: true\n});\n// Click on the bag icon to view the cart\ncy.get('.myntraweb-sprite.desktop-iconBag.sprites-headerBag').click();\ncy.reload();\ncy.get('button.css-etguer').should('exist').click({\n  force: true\n});\n// Check that the URL contains the cart page\ncy.url().should('contain', '/checkout/cart');",
+              "err": {},
+              "uuid": "4226a11e-fe25-45fe-9995-5a4b30d59a25",
+              "parentUUID": "f49b68b8-f959-401f-b51c-82c2f2981fdb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4226a11e-fe25-45fe-9995-5a4b30d59a25"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21193,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
