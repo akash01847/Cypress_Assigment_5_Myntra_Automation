@@ -14,7 +14,7 @@ describe('Search Product on Myntra', () => {
       .invoke('removeAttr', 'target')
       .eq(0).click();
 
-    cy.get('div.size-buttons-buttonContainer p.size-buttons-unified-size').contains('40').click({ force: true });
+    cy.get('.size-buttons-size-button.size-buttons-size-button-default').eq(1).click({ force: true })
 
     cy.wait(2000);
     cy.get('div.pdp-add-to-bag.pdp-button.pdp-flex.pdp-center').click({ force: true });
